@@ -1,0 +1,33 @@
+spring.application.name: zuul-proxy
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  client:
+    service-url.default-zone: http://192.168.72.165:8761/eureka
+    fetch-registry: true
+  instance:
+    hostname: 192.168.72.165
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+
+#ribbon:
+#  eureka:
+#    enabled: false
+
+
+server:
+  port: 8085
+
+zuul:
+#  ignored-services: '*'
+  routes:
+    order:
+      service-id: order-service
+      path: /orders/**
+      strip-prefix: false
+#order-service:
+#  ribbon:
+#    listOfServers: 192.168.72.165:1234
