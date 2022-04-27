@@ -6,15 +6,15 @@ management:
 eureka:
   client:
     service-url:
-      default-zone: http://192.168.72.165:8761/eureka
+      default-zone: http://localhost:8761/eureka
   instance:
-    hostname: 192.168.72.165
+    hostname: localhost
     preferIpAddress: 'true'
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 spring:
   cloud:
     inetutils:
-      preferredNetworks: 192.168.72.165
+      preferredNetworks: localhost
   application:
     name: order-service
 server:

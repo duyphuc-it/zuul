@@ -6,10 +6,10 @@ management:
         include: '*'
 eureka:
   client:
-    service-url.default-zone: http://192.168.72.165:8761/eureka
+    service-url.default-zone: http://localhost:8761/eureka
     fetch-registry: true
   instance:
-    hostname: 192.168.72.165
+    hostname: localhost
     preferIpAddress: true
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 

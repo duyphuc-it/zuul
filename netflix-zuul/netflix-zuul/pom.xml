@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.13</version>
+		<version>2.3.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sapo</groupId>
@@ -14,8 +14,8 @@
 	<name>netflix-zuul</name>
 	<description>netflix zuul gateway </description>
 	<properties>
-		<java.version>11</java.version>
-		<spring-cloud.version>2020.0.5</spring-cloud.version>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
